@@ -1,0 +1,19 @@
+#first time run:
+select the system you want to use, type '1' for USC, '2' for Metric: 2
+input distance you have travelled: 353
+input how much gas you have used: 14
+                          USC                         Metric
+Distance          :    219.344 miles             353.000 Km
+GAS               :     3.698 gallons             14.000 Liters
+Consumption       :    59.308 mpg              3.966 1/100Km
+Consumption rating:    Excellent
+
+#second time run:(format corrected)
+select the system you want to use, type '1' for USC, '2' for Metric: 2
+input distance you have travelled: 344
+input how much gas you have used: 23
+                            USC              Metric
+Distance          :       213.752 miles     344.000 Km
+GAS               :         6.076 gallons    23.000 Liters
+Consumption       :        35.180 mpg         6.686 1/100Km
+Consumption rating:    Excellent
