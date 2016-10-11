@@ -11,16 +11,15 @@ if system == 1:
     DK = 1.60934 * DM
     GL = 3.78541 * GG
     MPG = DM / GG
-    cm = 100 * GL / DK
 elif system == 2:
     DK = D
     GL = G
     DM = DK * 0.621371
     GG = GL * 0.264172
     MPG = DM / GG
-    cm = 100 * GL / DK
 else:
     print("error! you need to choose a system! ")
+cm = 100 * GL / DK
 if cm < 0:
     print("error! check your distance and gas value.")
 elif cm <= 8:
