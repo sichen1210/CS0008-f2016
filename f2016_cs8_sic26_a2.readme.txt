@@ -1,0 +1,8 @@
+This program is done by OCT. 29 2016
+done by      Si Chen
+emial: sic26@pitt.edu
+
+assignment related to file object and loop
+chapter4 - chapter6
+
+two fuctions needed to be defined
