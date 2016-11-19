@@ -1,0 +1,134 @@
+
+
+#####    first time run
+
+
+
+
+
+
+#This program is done by Nov. 18 2016
+#done by      Si Chen
+#emial: sic26@pitt.edu
+#assignment relates to function, dictionary, loop, list, files.
+
+
+#We are asked to write a program that read the master input list file, retrieves the names of the data files and from
+#each one of them reads every line, extract name and distance. Once the program has all the data in memory, it has to
+#compute the following quantities and informations:
+##    • number of files read in input
+##    • total number of lines read
+##    • total distance run
+##    •total distance run for each participants
+##    • individual maximum distance run and by which participant
+##    • individual minimum distance run and by which participant
+#    • report if there are any participants that appears more than once, how many times and their names
+##    • total number of participants
+
+#The program should provide an terminal output similar to the following:
+#    Number of Input files read      : xx
+#    Total number of lines read      : xx
+#    total distance run              : xxxx.xxxxx
+#    by participant                  : participant name
+#    max distance run by participan  : xxxx.xxxxx
+#    min distance run                : xxxx.xxxxx
+#    by participant                  : participant name
+#    Total number of participants    : xx
+#    Number of participants with multiple records : xx
+
+#The program should also create an output file reporting name of the participant, how many times their name appears in
+#the input files and the total distance run. Each row should be as follows:
+#    Max,3,124.23
+#    Barbara,2,65.00
+#    Luka,1,12.87
+#    ...
+
+
+#initialize an empty list L
+
+L = []
+
+#Firstly, open master file and get three file names
+#get rid of the "\n"
+#open files and get all information in side and put them inside the list L
+fn = open('f2016_cs8_a3.data.txt','r').readlines()
+for item in fn:
+    L = L + open(item.strip('\n')).readlines()
+#loop end file closed
+
+
+
+#get rid of the "\n"
+# write in comprehensive way and create a long list C
+C = [item.strip('\n').split(',') for item in L]
+
+# get rid of the header
+for item in C:
+    if "distance" in item:
+        C.remove(item)
+#loop end
+
+#number of files read in input
+NF_in_input = len(fn)
+
+#total number of lines read
+TTN_of_lines = len(L)
+
+
+#Use dictionary to solve the rest of problems
+#define dictionary
+name = {item[0] for item in C}
+distance = {item[1] for item in C}
+
+#find the total distance TTD
+TTD = sum(float(item) for item in distance)
+
+#distance for same person will be added automatically when convert list to dictionary
+record = dict(zip(name,distance))
+
+#total number of participant is
+TTN_of_runner = len(record)
+
+
+#find same names and their counts in the list
+list = [item[0] for item in C]
+account1 = [[item, list.count(item)] for item in list]
+account2 = [[item, list.count(item)] for item in list if list.count(item) != 1]
+No = len(account2)
+for item in account2:
+    if item[0] in record.keys():
+        account3 = [item.append(record.values())]
+
+#find the maximum and minimum of distance
+IMax = max(zip(record.values() ,record.keys()))
+IMin = min(zip(record.values(),record.keys()))
+
+#output values to a file
+file = open("f2016_cs8_sic26_a3.data.output.csv",'w')
+
+#find the content we need to write inside the file
+content = [[item,list.count(item),record[item],"\n"] for item in list]
+for elem in content:
+    file.write(str(content))
+file.close()
+
+
+#####    outcome
+
+Number of Input files read        :   3
+total number of lines read        :   453
+
+total distance run                :   23222.955949718507
+
+max distance run                  :   99.91761010374586
+   by participnt                  :   Nicole
+
+min distance run                  :   0.06246635217488361
+   by participnt                  :   Coleen
+
+total number of participant       :   388
+number of participants
+ with multiple records            :   122
+
+
+ file:

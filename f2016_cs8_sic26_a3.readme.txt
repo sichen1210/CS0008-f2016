@@ -1,0 +1,40 @@
+This program is done by Nov. 18 2016
+
+done by      Si Chen
+
+emial: sic26@pitt.edu
+
+assignment relates to function, dictionary, loop, list, files.
+
+We are asked to write a program that read the master input list file, retrieves the names of the data files and from
+each one of them reads every line, extract name and distance. Once the program has all the data in memory, it has to
+compute the following quantities and informations:
+    • number of files read in input
+    • total number of lines read
+    • total distance run (aka the sum of all the distances loaded from provided files)
+    • total distance run for each individual participant
+    • individual maximum distance run and by which participant
+    • individual minimum distance run and by which participant
+    • report if there are any participants that appears more than once, how many times and their names
+    • total number of participants
+The program should provide an terminal output similar to the following:
+    Number of Input files read    : xx
+    Total number of lines read    : xx
+    total distance run            : participant name
+    max distance run by participant : xxxx.xxxxx
+    min distance run              : xxxx.xxxxx
+    by participant                : participant name
+    Total number of participants : xx
+    Number of participants
+    with multiple records : xx
+
+The program should also create an output file reporting name of the participant, how many times their name appears in
+the input files and the total distance run. Each row should be as follows:
+    Max,3,124.23
+    Barbara,2,65.00
+    Luka,1,12.87
+    ...
+
+
+
+IMax = max(zip(record.values(),record.keys()))
