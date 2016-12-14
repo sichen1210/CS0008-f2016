@@ -1,0 +1,68 @@
+This program is done by Dec. 15 2016
+done by      Si Chen
+emial: sic26@pitt.edu
+
+*Finished with comprehension of assignment 3 review.
+
+*requirement
+
+Write a program that read the master input list file, retrieves the names of the data files and from each one of the
+data files reads every line, extract name and distance. Once the program has all the data in memory, it has to compute
+the following quantities and informations:
+
+number of files read in input
+total number of lines read
+total distance run (aka the sum of all the distances loaded from provided files)
+total distance run for each individual participant
+individual maximum distance run and by which participant
+individual minimum distance run and by which participant
+report if there are any participants that appears more than once, how many times and their names
+total number of participants
+
+*Output
+The program should provide output on the screen similar to the following:
+Number of Input files read: xx
+Total number of lines read: xx
+total distance run: xxxx.xxxxx
+max distance run: xxxx.xxxxx
+    by participant: participant name
+min distance run: xxxx.xxxxx
+    by participant: participant name
+
+Total number of participants : xx Number of participants
+with multiple records : xx
+
+The program should also create an output file reporting name of the participant, how many times their name appears in
+  the input files and the total distance run. Each row should be as follows:
+Max,3,124.23
+Barbara,2,65.00
+Luka,1,12.87
+...
+
+*The output file mentioned above, that has to be created by the student program, should be named:
+   f2016_cs8_<username>_fp.data.output.csv
+
+In this program, the student should make the best use of everything that has learn so far in this class, re- use as
+ much as he/she can from assignment #3, improve upon it and he/she has to use a class named participants that has 2
+ properties:
+ name: name of the participant. String.
+ distance: accumulator for total distance run by the participant. Float.
+ runs: accumulator for the total number of runs run by the participant.
+and, at least, the following methods:
+
+addDistance(d)
+add single distance to the distance accumulator and increments runs by 1. Argument d is a single float.
+addDistances(ld)
+add an array of distances to distance accumulator. Argument ld is a list of floats. getDistance()
+get the current value of the distance accumulator.
+getName()
+get the name of the participant of the current instance
+__init__ (n,d=0)
+initializer method. set name and initial distance if provided. If initial distance is not specified, it should be set
+  to zero
+__str__()
+stringify method. Returns a string with name, total distance run and how many distances the object added, according to
+  the following format:
+Name : xxxxxxxxxxxxxxxxxxx. Distance run : yyyy.yyyy. Runs : zzzz
+where xxxxxxxxxxxxxxxxxxx is a right align string of 20 characters for the name, yyyy.yyyy is the total distance run
+ with 9 digits, decimal point and 4 decimals, and zzzz is the number of runs with 4 digits, no decimals.
