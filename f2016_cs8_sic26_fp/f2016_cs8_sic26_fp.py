@@ -1,7 +1,12 @@
 #This program is done by Dec. 15 2016
 #done by      Si Chen
 #emial: sic26@pitt.edu
-
+#
+# Notes:
+# MN: code re-using is great, but you need to state that you re-used code from someone else
+#     more important you should make it yours: change file names!!!
+# MN: comments needs to be a littl ebit more clean
+#
 
 #requirement
 
